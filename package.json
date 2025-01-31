@@ -7,16 +7,23 @@
     "atcp-cli": "./bin/cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup src/cli.ts --format esm,cjs --dts",
+    "dev": "tsx src/cli.ts",
+    "link": "pnpm build && pnpm link --global"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Herdeson Mourao",
+    "email": "herdesondev@gmail.com"
+  },
   "license": "ISC",
   "dependencies": {
     "gluegun": "^5.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.12.0",
+    "tsup": "^8.3.6",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   }
 }
