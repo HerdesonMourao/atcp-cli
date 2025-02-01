@@ -1,8 +1,15 @@
-import { GluegunToolbox } from "gluegun";
+import { build } from "gluegun"
 
-module.exports = {
-  name: 'atcp-cli',
-  run: async (toolbox: GluegunToolbox) => {
-    toolbox.printWelcome
-  }
+async function run(argv: any) {
+  const cli = build()
+    .brand('atcp-cli')
+    .src(__dirname)
+    .plugins('./node_modules', { matching: 'atcp-cli-*', hidden: true })
+    .help()
+    .version()
+    .create();
+
+  return await cli.run(argv);
 }
+
+module.exports = { run }
