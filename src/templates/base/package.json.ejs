@@ -1,0 +1,31 @@
+{
+  "name": "<%= props.projectName %>",
+  "version": "0.0.1",
+  "description": "Basic API in node",
+  "main": "src/server.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env.file .env ./",
+    "build": "tsup src",
+    "postbuild": "cp .env dist/",
+    "start": "node --env-file=dist/.env dist/server.cjs"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "typescript"
+  ],
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "license": "ISC",
+  "homepage": "https://github.com//curtlink-api#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com//curtlink-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com//curtlink-api/issues"
+  }
+}
