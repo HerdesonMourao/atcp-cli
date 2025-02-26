@@ -9,13 +9,14 @@ const command: GluegunCommand = {
       parameters,
       filesystem, 
       template: { generate }, 
-      print, 
-      packageManager } = toolbox;
+      print: { error },
+      packageManager
+    } = toolbox;
 
     const projectName = parameters.first;
 
     if (!projectName) {
-      print.error('Please provide a project name!');
+      error('Please provide a project name!');
 
       process.exit(1);
     }
